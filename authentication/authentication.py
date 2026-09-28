@@ -25,7 +25,7 @@ class JWTAuthentication(authentication.BaseAuthentication):
         user_id = payload.get('user_identifier')
         if user_id is None:
             raise AuthenticationFailed('user identifier not found in JWT')
-        user = User.objects.filter(id=user_id)
+        user = User.objects.filter(id=user_id).first()
         if user is None:
             raise AuthenticationFailed('user not found')
         return user, payload
