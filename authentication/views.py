@@ -37,7 +37,10 @@ def sign_in(request):
             return JsonResponse({
                 "error": "user is not verified", "CurrentUser": current_user
             }, status = 400)
-
+        if user.is_active == False:
+            return JsonResponse({
+                "error": "user is not active"
+            }, status = 400)
         if user_auth:
             login(request, user)
             # create jwt token 
