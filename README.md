@@ -1,6 +1,6 @@
 # e_commerce_formation
 
 ##### db #####
-create database with name e_commerce_formation 
-python manage.py makemigrations 
-'e_commerce_formation migrate
+1/ create database with name e_commerce_formation 
+2/ python manage.py makemigrations 
+3/ python manage.py migrate
